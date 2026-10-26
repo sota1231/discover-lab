@@ -24,8 +24,8 @@ export default function App() {
         <main id="main">
           <Hero />
           <Business />
-          <SectionDivider />
-          <Profile />
+          {/* <SectionDivider /> */}
+          {/* <Profile /> */}
         </main>
         <Footer />
       </MotionConfig>
