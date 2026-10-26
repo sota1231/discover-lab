@@ -3,9 +3,9 @@ import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import { Business } from './components/sections/Business'
 import { Hero } from './components/sections/Hero'
-import { Profile } from './components/sections/Profile'
+// import { Profile } from './components/sections/Profile'
 import { BackgroundGlow } from './components/ui/BackgroundGlow'
-import { SectionDivider } from './components/ui/SectionDivider'
+// import { SectionDivider } from './components/ui/SectionDivider'
 
 export default function App() {
   return (
