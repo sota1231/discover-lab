@@ -1,5 +1,5 @@
 import { navItems, siteConfig } from '../../config/site'
-import { Logo } from '../brand/Logo'
+import { LogoImage } from '../brand/Logo'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -13,7 +13,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 py-14 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div>
           <a href="#top" className="inline-block rounded-md" aria-label={`${siteConfig.name} トップへ戻る`}>
-            <Logo />
+            <LogoImage className="h-8 w-auto" />
           </a>
           <p className="mt-4 text-sm text-fg-subtle">Technology × Global Business</p>
         </div>

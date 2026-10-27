@@ -3,7 +3,7 @@ import { m } from 'motion/react'
 import { navItems } from '../../config/site'
 import { useActiveSection } from '../../hooks/useActiveSection'
 import { useScrolled } from '../../hooks/useScrolled'
-import { Logo } from '../brand/Logo'
+import { LogoImage } from '../brand/Logo'
 import { MobileNav } from './MobileNav'
 
 const sectionIds = navItems.map((item) => item.id)
@@ -33,7 +33,7 @@ export function Header() {
           }`}
         >
           <a href="#top" className="rounded-md" aria-label="Discover Lab トップへ戻る">
-            <Logo />
+            <LogoImage className="h-7 w-auto sm:h-8" />
           </a>
 
           <nav aria-label="メインナビゲーション" className="hidden md:block">

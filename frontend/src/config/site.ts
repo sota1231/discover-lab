@@ -8,11 +8,6 @@
 export const siteConfig = {
   /** 屋号 */
   name: 'Discover Lab',
-  /** ロゴ表示用：屋号を前半・後半に分けて表示ウェイトを変えます */
-  logo: {
-    primary: 'Discover',
-    secondary: 'Lab',
-  },
   /** <title> */
   title: 'Discover Lab | Technology × Global Business',
   /** meta description / OGP description */

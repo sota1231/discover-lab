@@ -1,4 +1,6 @@
 import { useId } from 'react'
+import logoDark from '../../assets/logo-dark.webp'
+import logoLight from '../../assets/logo-light.webp'
 import { siteConfig } from '../../config/site'
 
 interface LogoMarkProps {
@@ -27,19 +29,23 @@ export function LogoMark({ className = 'size-7' }: LogoMarkProps) {
   )
 }
 
-interface LogoProps {
+interface LogoImageProps {
   className?: string
 }
 
-/** 文字主体のロゴ（シンボル＋ワードマーク） */
-export function Logo({ className = '' }: LogoProps) {
+/**
+ * 画像版ロゴ（シンボル＋ワードマーク）。
+ * 元画像は design/logo.png。src/assets/ の画像はテーマ別に透過・軽量化したもの。
+ */
+export function LogoImage({ className = 'h-8 w-auto' }: LogoImageProps) {
   return (
-    <span className={`inline-flex items-center gap-2.5 text-fg ${className}`}>
-      <LogoMark />
-      <span className="font-display text-[1.05rem] leading-none tracking-tight">
-        <span className="font-semibold">{siteConfig.logo.primary}</span>
-        <span className="ml-1 font-light text-fg-soft">{siteConfig.logo.secondary}</span>
-      </span>
-    </span>
+    <img
+      src={siteConfig.theme === 'light' ? logoLight : logoDark}
+      alt={siteConfig.name}
+      width={593}
+      height={120}
+      decoding="async"
+      className={className}
+    />
   )
 }
