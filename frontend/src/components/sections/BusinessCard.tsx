@@ -33,7 +33,7 @@ export function BusinessCard({ item, index }: BusinessCardProps) {
       whileHover={{ y: -6 }}
       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
       style={{ '--accent': accent } as CSSProperties}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-ink-850/90 to-ink-900/90 p-7 transition-[border-color,box-shadow] duration-500 hover:border-[color-mix(in_oklab,var(--accent)_40%,transparent)] hover:shadow-[0_30px_80px_-40px_var(--accent)] sm:p-9"
+      className="card-surface group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line/[0.07] bg-gradient-to-b from-surface/90 to-canvas-soft/90 p-7 transition-[border-color,box-shadow] duration-500 hover:border-[color-mix(in_oklab,var(--accent)_40%,transparent)] hover:shadow-[0_30px_80px_-40px_var(--accent)] sm:p-9"
     >
       {/* スポットライト */}
       <div
@@ -52,11 +52,11 @@ export function BusinessCard({ item, index }: BusinessCardProps) {
 
       <div className="relative flex items-start justify-between">
         <span
-          className="flex size-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] text-[var(--accent)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-6deg]"
+          className="flex size-12 items-center justify-center rounded-2xl border border-line/10 bg-line/[0.03] text-[var(--accent)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-6deg]"
         >
           <BusinessIcon variant={item.variant} />
         </span>
-        <span className="font-display text-sm tracking-[0.2em] text-mist-500">{item.number}</span>
+        <span className="font-display text-sm tracking-[0.2em] text-fg-subtle">{item.number}</span>
       </div>
 
       <BusinessPattern
@@ -65,14 +65,14 @@ export function BusinessCard({ item, index }: BusinessCardProps) {
       />
 
       <div className="relative mt-auto">
-        <h3 id={`${item.id}-title`} className="font-display text-xl leading-snug font-semibold tracking-tight text-mist-100 sm:text-[1.4rem]">
+        <h3 id={`${item.id}-title`} className="font-display text-xl leading-snug font-semibold tracking-tight text-fg sm:text-[1.4rem]">
           {item.title}
         </h3>
         <p className="mt-2 text-sm font-medium text-[var(--accent)]">{item.titleJa}</p>
-        <p className="mt-5 text-[0.94rem] leading-loose text-mist-300">{item.description}</p>
+        <p className="mt-5 text-[0.94rem] leading-loose text-fg-soft">{item.description}</p>
         <ul className="mt-7 flex flex-wrap gap-2" aria-label="キーワード">
           {item.keywords.map((keyword) => (
-            <li key={keyword} className="rounded-full border border-white/10 px-3 py-1 text-xs text-mist-400">
+            <li key={keyword} className="rounded-full border border-line/10 px-3 py-1 text-xs text-fg-muted">
               {keyword}
             </li>
           ))}

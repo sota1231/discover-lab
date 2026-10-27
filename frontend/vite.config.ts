@@ -46,7 +46,8 @@ function siteMeta(siteUrl: string): Plugin {
     '%SITE_TITLE%': escapeHtml(siteConfig.title),
     '%SITE_NAME%': escapeHtml(siteConfig.name),
     '%SITE_DESCRIPTION%': escapeHtml(siteConfig.description),
-    '%SITE_THEME_COLOR%': siteConfig.themeColor,
+    '%SITE_THEME%': siteConfig.theme,
+    '%SITE_THEME_COLOR%': siteConfig.themeColor[siteConfig.theme],
     '<!-- SITE_SEO_TAGS -->': seoTags,
   }
 

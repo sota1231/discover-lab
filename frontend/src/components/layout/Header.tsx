@@ -23,7 +23,7 @@ export function Header() {
       <div
         className={`transition-[background-color,border-color,backdrop-filter] duration-500 ${
           scrolled || menuOpen
-            ? 'border-b border-white/[0.06] bg-ink-950/75 backdrop-blur-xl'
+            ? 'border-b border-line/[0.06] bg-canvas/75 backdrop-blur-xl'
             : 'border-b border-transparent bg-transparent'
         }`}
       >
@@ -46,10 +46,10 @@ export function Header() {
                       href={`#${item.id}`}
                       aria-current={isActive ? 'location' : undefined}
                       className={`group relative block px-4 py-2 text-sm transition-colors duration-300 ${
-                        isActive ? 'text-mist-100' : 'text-mist-400 hover:text-mist-100'
+                        isActive ? 'text-fg' : 'text-fg-muted hover:text-fg'
                       }`}
                     >
-                      <span className="mr-2 font-display text-[0.65rem] tracking-[0.2em] text-mist-500 uppercase">
+                      <span className="mr-2 font-display text-[0.65rem] tracking-[0.2em] text-fg-subtle uppercase">
                         {item.labelEn}
                       </span>
                       {item.label}

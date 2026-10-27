@@ -49,6 +49,7 @@ discover-lab/
 | 変更したいもの | ファイル |
 | --- | --- |
 | 屋号・ロゴの文字・`<title>`・meta description・公開URL | `frontend/src/config/site.ts` |
+| 配色テーマ（黒ベース / 白ベース） | `frontend/src/config/site.ts` の `theme` |
 | ブランドカラー・フォント | `frontend/src/styles/theme.css` |
 | ヒーローのキャッチコピー | `frontend/src/content/hero.ts` |
 | 事業内容 | `frontend/src/content/business.ts` |

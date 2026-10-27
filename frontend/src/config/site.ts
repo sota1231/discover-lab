@@ -23,13 +23,21 @@ export const siteConfig = {
    * 独自ドメイン確定後に設定してください。空の場合 canonical / og:url / sitemap は出力されません。
    * 環境変数 SITE_URL が設定されている場合はそちらが優先されます。
    */
-  url: '',
+  url: 'https://discoverlab-jp.com',
   /** OGP 画像（public/ 配下のパス） */
   ogImage: '/og-image.jpg',
   locale: 'ja_JP',
   lang: 'ja',
-  /** ブラウザ UI の色（theme-color） */
-  themeColor: '#05070d',
+  /**
+   * 配色テーマ：'dark'（黒ベース）または 'light'（白ベース）
+   * 色の定義は src/styles/theme.css
+   */
+  theme: 'light' as 'dark' | 'light',
+  /** ブラウザ UI の色（theme-color）。テーマごとに指定 */
+  themeColor: {
+    dark: '#05070d',
+    light: '#fbfcfe',
+  },
 } as const
 
 export type SiteConfig = typeof siteConfig

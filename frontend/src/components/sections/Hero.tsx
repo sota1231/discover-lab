@@ -39,15 +39,14 @@ export function Hero() {
       {/* 背景：グリッド＋光 */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent)]" />
-        <div className="absolute top-1/2 right-[-10%] h-[42rem] w-[42rem] -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(34_211_238/0.14),transparent)] blur-2xl" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink-950" />
+        <div className="absolute top-1/2 right-[-10%] h-[42rem] w-[42rem] -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--color-cyan)_14%,transparent),transparent)] blur-2xl" />
       </div>
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr] lg:gap-6">
         <m.div style={{ y: textY }} variants={container} initial="hidden" animate="visible" className="relative z-10">
           <m.p
             variants={fadeUp}
-            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 font-display text-[0.7rem] tracking-[0.28em] text-mist-300 uppercase"
+            className="inline-flex items-center gap-3 rounded-full border border-line/10 bg-line/[0.03] px-4 py-1.5 font-display text-[0.7rem] tracking-[0.28em] text-fg-soft uppercase"
           >
             <span className="size-1.5 rounded-full bg-cyan shadow-[0_0_12px_var(--color-cyan)]" aria-hidden="true" />
             {heroContent.eyebrow}
@@ -59,24 +58,24 @@ export function Hero() {
           >
             {heroContent.headline.map((row) => (
               <span key={row.text} className="block overflow-hidden pb-[0.08em]">
-                <m.span variants={line} className={`block ${row.accent ? 'text-gradient' : 'text-mist-100'}`}>
+                <m.span variants={line} className={`block ${row.accent ? 'text-gradient' : 'text-fg'}`}>
                   {row.text}
                 </m.span>
               </span>
             ))}
           </h1>
 
-          <m.p variants={fadeUp} className="mt-9 text-lg font-medium tracking-wider text-mist-100 sm:text-2xl">
+          <m.p variants={fadeUp} className="mt-9 text-lg font-medium tracking-wider text-fg sm:text-2xl">
             {heroContent.lead}
           </m.p>
-          <m.p variants={fadeUp} className="mt-4 max-w-xl text-sm leading-loose text-mist-400 sm:text-base">
+          <m.p variants={fadeUp} className="mt-4 max-w-xl text-sm leading-loose text-fg-muted sm:text-base">
             {heroContent.body}
           </m.p>
 
           <m.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href={heroContent.primaryCta.href}
-              className="group inline-flex items-center gap-3 rounded-full bg-mist-100 px-6 py-3 text-sm font-medium text-ink-950 transition-[background-color,box-shadow] duration-300 hover:bg-white hover:shadow-[0_0_40px_-6px_var(--color-cyan)]"
+              className="group inline-flex items-center gap-3 rounded-full bg-fg px-6 py-3 text-sm font-medium text-canvas transition-shadow duration-300 hover:shadow-[0_0_40px_-6px_var(--color-cyan)]"
             >
               {heroContent.primaryCta.label}
               <svg viewBox="0 0 16 16" className="size-4 transition-transform duration-300 group-hover:translate-y-0.5" aria-hidden="true">
@@ -85,7 +84,7 @@ export function Hero() {
             </a>
             <a
               href={heroContent.secondaryCta.href}
-              className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm text-mist-300 transition-colors duration-300 hover:border-white/30 hover:text-mist-100"
+              className="inline-flex items-center rounded-full border border-line/15 px-6 py-3 text-sm text-fg-soft transition-colors duration-300 hover:border-line/30 hover:text-fg"
             >
               {heroContent.secondaryCta.label}
             </a>
@@ -116,10 +115,10 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 font-display text-[0.65rem] tracking-[0.3em] text-mist-500 uppercase sm:flex"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 font-display text-[0.65rem] tracking-[0.3em] text-fg-subtle uppercase sm:flex"
       >
         Scroll
-        <span className="relative block h-12 w-px overflow-hidden bg-white/10">
+        <span className="relative block h-12 w-px overflow-hidden bg-line/10">
           <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-transparent to-cyan animate-[scroll-line_2.4s_ease-in-out_infinite]" />
         </span>
       </m.a>

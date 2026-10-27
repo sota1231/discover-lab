@@ -1,23 +1,30 @@
 /*
  * ブランドカラー・フォント設定
- * ここを書き換えるとサイト全体の配色が変わります。
- * Tailwind のユーティリティ（bg-ink-950 / text-accent など）としても使えます。
+ * 色は「役割」で命名しています。ダーク／ライトの切り替えは src/config/site.ts の theme で行います。
+ * Tailwind のユーティリティ（bg-canvas / text-fg / border-line/10 など）としても使えます。
+ *
+ *   canvas      … ページ背景
+ *   canvas-soft … 一段沈んだ背景
+ *   surface     … カードなどの面
+ *   fg          … 見出し・本文の強い文字
+ *   fg-soft / fg-muted / fg-subtle … 補足文字（順に弱くなる）
+ *   line        … 罫線・枠線（透明度を付けて使用：border-line/10 など）
+ *   accent / accent-soft / cyan / cyan-soft / indigo … アクセント
  */
+
+/* ダークテーマ（既定値） */
 @theme {
-  /* ベース：ブラック〜ダークネイビー */
-  --color-ink-950: #05070d;
-  --color-ink-900: #080c17;
-  --color-ink-850: #0b1120;
-  --color-ink-800: #0f172a;
-  --color-ink-700: #1a2338;
+  --color-canvas: #05070d;
+  --color-canvas-soft: #080c17;
+  --color-surface: #0b1120;
 
-  /* ニュートラル（テキスト・罫線） */
-  --color-mist-100: #eef2f8;
-  --color-mist-300: #b8c1d1;
-  --color-mist-400: #8a94a8;
-  --color-mist-500: #5f6a80;
+  --color-fg: #eef2f8;
+  --color-fg-soft: #b8c1d1;
+  --color-fg-muted: #8a94a8;
+  --color-fg-subtle: #5f6a80;
 
-  /* アクセント：ブルー／シアン */
+  --color-line: #ffffff;
+
   --color-accent: #3b82f6;
   --color-accent-soft: #60a5fa;
   --color-cyan: #22d3ee;
@@ -29,4 +36,26 @@
     ui-sans-serif, system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ライトテーマ：白ベース。アクセントは白背景で読めるよう一段濃くしています */
+:root[data-theme='light'] {
+  --color-canvas: #fbfcfe;
+  --color-canvas-soft: #f2f5fa;
+  --color-surface: #ffffff;
+
+  --color-fg: #0b1220;
+  --color-fg-soft: #3a4558;
+  --color-fg-muted: #556073;
+  --color-fg-subtle: #6b7487;
+
+  --color-line: #0b1220;
+
+  --color-accent: #2563eb;
+  --color-accent-soft: #2563eb;
+  --color-cyan: #0891b2;
+  --color-cyan-soft: #06b6d4;
+  --color-indigo: #4f46e5;
+
+  color-scheme: light;
 }

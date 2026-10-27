@@ -49,7 +49,7 @@ export function MobileNav({ open, onOpenChange, active }: MobileNavProps) {
         aria-controls={PANEL_ID}
         aria-label={open ? 'メニューを閉じる' : 'メニューを開く'}
         onClick={() => onOpenChange(!open)}
-        className="relative -mr-2 flex size-11 items-center justify-center rounded-full text-mist-100"
+        className="relative -mr-2 flex size-11 items-center justify-center rounded-full text-fg"
       >
         <span className="relative block h-3 w-5" aria-hidden="true">
           <m.span
@@ -76,7 +76,7 @@ export function MobileNav({ open, onOpenChange, active }: MobileNavProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-white/[0.06] bg-ink-950/95 px-5 pt-10 pb-16 backdrop-blur-xl"
+            className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line/[0.06] bg-canvas/95 px-5 pt-10 pb-16 backdrop-blur-xl"
           >
             <ul className="space-y-2">
               {navItems.map((item, index) => (
@@ -90,9 +90,9 @@ export function MobileNav({ open, onOpenChange, active }: MobileNavProps) {
                     href={`#${item.id}`}
                     onClick={() => onOpenChange(false)}
                     aria-current={active === item.id ? 'location' : undefined}
-                    className="flex items-baseline justify-between border-b border-white/[0.06] py-5"
+                    className="flex items-baseline justify-between border-b border-line/[0.06] py-5"
                   >
-                    <span className="text-2xl font-medium text-mist-100">{item.label}</span>
+                    <span className="text-2xl font-medium text-fg">{item.label}</span>
                     <span className="font-display text-xs tracking-[0.25em] text-cyan uppercase">
                       {String(index + 1).padStart(2, '0')} / {item.labelEn}
                     </span>

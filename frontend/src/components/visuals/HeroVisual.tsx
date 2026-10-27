@@ -50,7 +50,7 @@ export function HeroVisual() {
 
       {/* 外周の目盛りリング（ゆっくり回転） */}
       <g className="animate-spin-slow origin-center [transform-box:view-box]">
-        <circle cx={C} cy={C} r={232} stroke="white" strokeOpacity="0.06" />
+        <circle cx={C} cy={C} r={232} stroke="var(--color-line)" strokeOpacity="0.06" />
         {Array.from({ length: 72 }, (_, i) => {
           const angle = (i * 5 * Math.PI) / 180
           const inner = i % 6 === 0 ? 222 : 227
@@ -61,7 +61,7 @@ export function HeroVisual() {
               y1={C + Math.sin(angle) * inner}
               x2={C + Math.cos(angle) * 232}
               y2={C + Math.sin(angle) * 232}
-              stroke="white"
+              stroke="var(--color-line)"
               strokeOpacity={i % 6 === 0 ? 0.28 : 0.1}
             />
           )
@@ -94,8 +94,8 @@ export function HeroVisual() {
       />
 
       {/* 地球儀 */}
-      <circle cx={C} cy={C} r={R} fill="var(--color-ink-900)" fillOpacity="0.6" stroke="url(#hv-stroke)" strokeOpacity="0.7" />
-      <g clipPath="url(#hv-sphere)" stroke="white" strokeOpacity="0.1">
+      <circle cx={C} cy={C} r={R} fill="var(--color-canvas-soft)" fillOpacity="0.6" stroke="url(#hv-stroke)" strokeOpacity="0.7" />
+      <g clipPath="url(#hv-sphere)" stroke="var(--color-line)" strokeOpacity="0.1">
         {longitudes.map((deg) => (
           <ellipse key={`lon-${deg}`} cx={C} cy={C} rx={Math.abs(Math.cos((deg * Math.PI) / 180)) * R} ry={R} />
         ))}

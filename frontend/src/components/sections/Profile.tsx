@@ -19,9 +19,9 @@ export function Profile() {
           />
           <Reveal delay={0.15} className="mt-12 hidden lg:block">
             <div aria-hidden="true" className="relative size-40">
-              <div className="absolute inset-0 rounded-full border border-white/[0.06]" />
-              <div className="absolute inset-6 rounded-full border border-dashed border-white/10 animate-spin-slow" />
-              <LogoMark className="absolute inset-0 m-auto size-14 text-mist-100" />
+              <div className="absolute inset-0 rounded-full border border-line/[0.06]" />
+              <div className="absolute inset-6 rounded-full border border-dashed border-line/10 animate-spin-slow" />
+              <LogoMark className="absolute inset-0 m-auto size-14 text-fg" />
             </div>
           </Reveal>
         </div>
@@ -32,12 +32,21 @@ export function Profile() {
               aria-hidden="true"
               className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyan/60 to-transparent"
             />
-            <dl className="divide-y divide-white/[0.06]">
+            <dl className="divide-y divide-line/[0.06]">
               {items.map((item) => (
                 <div key={item.label} className="grid gap-2 px-7 py-6 sm:grid-cols-[9rem_1fr] sm:gap-6 sm:px-10 sm:py-7">
-                  <dt className="text-sm text-mist-500">{item.label}</dt>
-                  <dd className={`whitespace-pre-line ${item.value === null ? 'text-mist-500' : 'text-mist-100'}`}>
-                    {item.value ?? profileSection.emptyLabel}
+                  <dt className="text-sm text-fg-subtle">{item.label}</dt>
+                  <dd className={`whitespace-pre-line ${item.value === null ? 'text-fg-subtle' : 'text-fg'}`}>
+                    {item.value !== null && item.href ? (
+                      <a
+                        href={item.href}
+                        className="break-all underline decoration-line/20 underline-offset-4 transition-colors hover:text-cyan hover:decoration-cyan"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      (item.value ?? profileSection.emptyLabel)
+                    )}
                   </dd>
                 </div>
               ))}

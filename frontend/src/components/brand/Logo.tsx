@@ -34,11 +34,11 @@ interface LogoProps {
 /** 文字主体のロゴ（シンボル＋ワードマーク） */
 export function Logo({ className = '' }: LogoProps) {
   return (
-    <span className={`inline-flex items-center gap-2.5 text-mist-100 ${className}`}>
+    <span className={`inline-flex items-center gap-2.5 text-fg ${className}`}>
       <LogoMark />
       <span className="font-display text-[1.05rem] leading-none tracking-tight">
         <span className="font-semibold">{siteConfig.logo.primary}</span>
-        <span className="ml-1 font-light text-mist-300">{siteConfig.logo.secondary}</span>
+        <span className="ml-1 font-light text-fg-soft">{siteConfig.logo.secondary}</span>
       </span>
     </span>
   )
